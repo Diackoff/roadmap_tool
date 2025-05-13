@@ -19,6 +19,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
 import json
+import logging
 
 # Page config
 st.set_page_config(page_title="Feature Roadmap Tool", layout="wide")
