@@ -1,7 +1,12 @@
 # app.py
+
+import logging
+import streamlit as st
+
 import sentry_sdk
 from sentry_sdk.integrations.logging import LoggingIntegration
 
+# Инициализация Sentry
 sentry_logging = LoggingIntegration(
     level=logging.INFO,        # Захватывать информационные сообщения
     event_level=logging.ERROR  # Отправлять в Sentry только ошибки
@@ -11,7 +16,8 @@ sentry_sdk.init(
     integrations=[sentry_logging],
     traces_sample_rate=0.1
 )
-import streamlit as st
+
+# дальше ваши остальные импорты
 import pandas as pd
 import plotly.figure_factory as ff
 import plotly.graph_objects as go
@@ -19,7 +25,6 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
 import json
-import logging
 
 # Page config
 st.set_page_config(page_title="Feature Roadmap Tool", layout="wide")
